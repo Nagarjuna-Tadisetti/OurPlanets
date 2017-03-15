@@ -1,3 +1,7 @@
-<h1>
-  {{title}}
-</h1>
+<h3>Following are the planets in solar system</h3>
+<ul>
+    <li *ngFor="let planet of planetsList">{{planet.name}}</li>    
+</ul>
+<my-temp></my-temp>
+<a routerLink="/moons" routerLinkActive="active">Moons</a>
+<router-outlet></router-outlet>

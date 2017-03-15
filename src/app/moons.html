@@ -1,0 +1,5 @@
+<h3>Following are the moons in solar system</h3>
+<ul>
+    <li *ngFor="let moon of moonsList" (click)="onSelect(moon)">{{moon.name}}</li>    
+</ul>
+<router-outlet></router-outlet>
