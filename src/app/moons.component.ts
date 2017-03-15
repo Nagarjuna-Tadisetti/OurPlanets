@@ -11,7 +11,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class MoonsComp implements OnInit {
   moonsList: Moons[] = [];
   constructor(
-    private _moonservice: MoonsService
+    private _moonservice: MoonsService,
     private router: Router) {}
 
   ngOnInit() {

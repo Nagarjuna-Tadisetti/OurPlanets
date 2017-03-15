@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Moons } from './moons.model';
 
 
 @Component({
   selector: 'MoonDetails',
-  template: `<h1>Showing details of Moon: {{id}}</h1>`,
+  template: `<h1 [moon]="Moon">Showing details of Moon: {{moon.name}}</h1>`,
 })
 export class MoonDetailsComp implements OnInit {
+    @Input() moon: Moons;
     id: number;
  constructor(private route: ActivatedRoute) {}
 
@@ -14,6 +16,6 @@ export class MoonDetailsComp implements OnInit {
       this.route.params.subscribe(params => {
        this.id = +params['id'];
     });
-    
+      this.moon.name = "NewMoon";
   }
 }
